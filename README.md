@@ -43,7 +43,8 @@ Copy all value from orginal table
 Insert into club_member_info_cleaned 
 SELECT * FROM club_member_info;
 ```
-## Eliminate space in full name
+## CLean data
+### full_name
 ```sql
 UPDATE club_member_info_cleaned
 SET full_name = TRIM(full_name);

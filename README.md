@@ -85,3 +85,27 @@ Result
 |JOETE CUDIFF|
 |MENDIE ALEXANDRESCU|
 |FEY KLOSS|
+## Age
+### age >100 and <> 0
+```sql
+SELECT CAST(SUBSTR(age,1,2) AS INTEGER)
+FROM club_member_info_cleaned cmic
+WHERE age > 100 AND age <> ''
+ORDER BY age;
+UPDATE club_member_info_cleaned
+SET age = CAST(SUBSTR(age,1,2) AS INTEGER)
+WHERE age > 100 AND age <> '';
+```
+### age = 0
+```sql
+SELECT ROUND(AVG(age),0)
+FROM club_member_info_cleaned cmic;
+SELECT age 
+FROM club_member_info_cleaned cmic
+WHERE age = ''
+ORDER BY age;
+UPDATE club_member_info_cleaned 
+SET age = (SELECT ROUND(AVG(age),0)
+FROM club_member_info_cleaned)
+WHERE age = '';
+```

@@ -45,6 +45,7 @@ SELECT * FROM club_member_info;
 ```
 ## CLean data
 ### full_name
+#### Trim whitesapce
 ```sql
 SELECT TRIM(full_name)
 FROM  club_member_info_cleaned

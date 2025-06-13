@@ -64,4 +64,24 @@ Result
 |Joete Cudiff|
 |mendie alexandrescu|
 |fey kloss|
-
+#### Upper full_name
+```sql
+UPDATE club_member_info_cleaned
+SET full_name = UPPER(full_name);
+SELECT full_name
+FROM  club_member_info_cleaned
+LIMIT 10;
+```
+Result
+|full_name|
+|---------|
+|ADDIE LUSH|
+|ROCK CRADICK|
+|SYDEL SHARVELL|
+|CONSTANTIN DE LA CRUZ|
+|GAYLOR REDHOLE|
+|WANDA DEL MAR|
+|JOANN KENEALY|
+|JOETE CUDIFF|
+|MENDIE ALEXANDRESCU|
+|FEY KLOSS|

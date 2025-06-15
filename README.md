@@ -95,17 +95,111 @@ ORDER BY age;
 UPDATE club_member_info_cleaned
 SET age = CAST(SUBSTR(age,1,2) AS INTEGER)
 WHERE age > 100 AND age <> '';
+SELECT age
+FROM club_member_info_cleaned
+WHERE age > 100 and age <> '';
 ```
+Result 
+|age|
+|---|
+
 ### age = 0
 ```sql
 SELECT ROUND(AVG(age),0)
 FROM club_member_info_cleaned cmic;
-SELECT age 
-FROM club_member_info_cleaned cmic
-WHERE age = ''
-ORDER BY age;
 UPDATE club_member_info_cleaned 
 SET age = (SELECT ROUND(AVG(age),0)
 FROM club_member_info_cleaned)
 WHERE age = '';
+SELECT age
+FROM club_member_info_cleaned
+WHERE age = 42 OR age ='';
 ```
+Result
+|age|
+|---|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+|42|
+## Martial_status
+```sql
+SELECT martial_status
+FROM club_member_info_cleaned
+WHERE martial_status = '';
+UPDATE club_member_info_cleaned
+SET martial_status = 'unknown'
+WHERE martial_status = '';
+SELECT martial_status
+FROM club_member_info_cleaned
+WHERE martial_status = '' OR martial_status = 'unknown';
+```
+Result
+|martial_status|
+|--------------|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+|unknown|
+
